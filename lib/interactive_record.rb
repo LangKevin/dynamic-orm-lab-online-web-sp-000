@@ -54,7 +54,7 @@ class InteractiveRecord
   end
   def self.find_by(params={})
 
-    if params[:name] == nil
+    if params[:name] == nilex
       sql = "SELECT * FROM #{self.table_name} WHERE grade = ?"
       DB[:conn].execute(sql, params[:grade])
     else
