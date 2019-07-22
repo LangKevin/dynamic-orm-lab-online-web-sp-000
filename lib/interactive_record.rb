@@ -1,5 +1,6 @@
 require_relative "../config/environment.rb"
 require 'active_support/inflector'
+require 'pry'
 
 class InteractiveRecord
   def self.table_name
@@ -53,6 +54,7 @@ class InteractiveRecord
   end
   def self.find_by(params={})
     sql = "SELECT * FROM #{self.table_name} WHERE name = ?"
+    binding.pry
     DB[:conn].execute(sql, params["name"])
   end
 end
