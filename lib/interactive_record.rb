@@ -58,8 +58,8 @@ class InteractiveRecord
       sql = "SELECT * FROM #{self.table_name} WHERE name = ?"
       DB[:conn].execute(sql, params[:name])
     else
-      sql = "SELECT * FROM #{self.table_name} WHERE id = ?"
-      DB[:conn].execute(sql, params[:id])
+      sql = "SELECT * FROM #{self.table_name} WHERE grade = ?"
+      DB[:conn].execute(sql, params[:grade])
     end
   end
 end
